@@ -18,9 +18,7 @@ namespace Exercicio_136.Entities
             Color = color;
         }
 
-        public virtual double Area()
-        {
-            return 0;
-        }
+        public abstract double Area();
+        
     }
 }

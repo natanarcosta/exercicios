@@ -34,10 +34,13 @@ namespace Exercicio_136
                     double radius = double.Parse(Console.ReadLine());
                     list.Add(new Circle(radius, color));
                 }
-                foreach(Shape x in list)
-                {
-                    Console.WriteLine(x.Area().ToString("F2", CultureInfo.InvariantCulture));
-                }
+                
+            }
+            Console.WriteLine();
+            Console.WriteLine("AREAS:");
+            foreach (Shape x in list)
+            {
+                Console.WriteLine(x.Area().ToString("F2", CultureInfo.InvariantCulture));
             }
         }
     }

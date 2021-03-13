@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Text;
 using Exercicio_136.Entities.Enums;
 
@@ -19,7 +18,7 @@ namespace Exercicio_136.Entities
         }
         public override double Area()
         {
-            return 3.14 * (Radius*Radius);
+            return Math.PI * (Radius*Radius);
         }
     }
 }
