@@ -22,6 +22,7 @@ namespace _123_Exercicio
             OrderStatus status = Enum.Parse<OrderStatus>(Console.ReadLine());
 
             Client client = new Client(clientName, email, birthDate);
+            //Cria ordem linkando o objeto Client
             Order order = new Order(DateTime.Now, status, client);
 
             Console.Write("How many items for this order? ");
@@ -31,13 +32,18 @@ namespace _123_Exercicio
             for (int i = 1; i <= items; i++)
             {
                 Console.WriteLine($"Enter #{i} item data: ");
+
                 Console.Write("Product name: ");
                 string productName = Console.ReadLine();
+
                 Console.Write("Product price: ");
                 double productPrice = double.Parse(Console.ReadLine());
+
                 Product p = new Product(productName, productPrice);
+
                 Console.Write("Quantity: ");
                 int productQuantity = int.Parse(Console.ReadLine());
+
                 OrderItem o = new OrderItem(productQuantity, productPrice, p);
                 order.AddItem(o);
             }
