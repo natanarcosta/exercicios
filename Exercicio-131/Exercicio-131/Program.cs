@@ -37,10 +37,11 @@ namespace Exercicio_131
                 }
                 
             }
+            Console.WriteLine();
             Console.WriteLine("PAYMENTS:");
-            foreach(Employee x in list)
+            foreach (Employee x in list)
             {
-                Console.WriteLine(x.Name + " - $ " + x.Payment().ToString());
+                Console.WriteLine(x.Name + " - $ " + x.Payment().ToString("F2", CultureInfo.InvariantCulture));
             }
         }
     }
