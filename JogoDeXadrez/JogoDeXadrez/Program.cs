@@ -8,17 +8,32 @@ namespace JogoDeXadrez
     {
         static void Main(string[] args)
         {
-            Tabuleiro tab = new Tabuleiro(8, 8);
+            try
+            {
+                PartidaDeXadrez Partida = new PartidaDeXadrez();
 
-            tab.ColocarPeca(new Torre(tab, Cor.Preta), new Posicao(0, 0));
-            tab.ColocarPeca(new Torre(tab, Cor.Preta), new Posicao(1, 3));
-            tab.ColocarPeca(new Rei(tab, Cor.Preta), new Posicao(0, 2));
+                while (!Partida.Terminada)
+                {
+                    Console.Clear();
+                    Tela.ImprimirTabuleiro(Partida.Tab);
 
-            tab.ColocarPeca(new Torre(tab, Cor.Branca), new Posicao(3, 5));
+                    Console.WriteLine();
+                    Console.Write("Origem: ");
+                    Posicao Origem = Tela.LerPosicaoXadrez().toPosicao();
+                    Console.Write("Destino: ");
+                    Posicao Destino = Tela.LerPosicaoXadrez().toPosicao();
 
-            Tela.ImprimirTabuleiro(tab);
+                    Partida.ExecutaMovimento(Origem, Destino);
 
-            Console.ReadLine();
+                }
+
+                
+
+            }
+            catch(TabuleiroException e)
+            {
+                Console.WriteLine(e.Message);
+            }
         }
     }
 }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using tabuleiro;
+using xadrez;
 
 namespace JogoDeXadrez
 {
@@ -41,6 +42,14 @@ namespace JogoDeXadrez
                 Console.Write(peca +  " ");
                 Console.ForegroundColor = aux;
             }
+        }
+        public static PosicaoXadrez LerPosicaoXadrez()
+        {
+            string s = Console.ReadLine();
+            
+            int linha = int.Parse(s[1]+"");
+            char coluna = s[0];
+            return new PosicaoXadrez(coluna, linha);
         }
     }
 }
