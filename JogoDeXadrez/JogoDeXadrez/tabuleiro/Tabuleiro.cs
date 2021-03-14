@@ -16,7 +16,7 @@ namespace tabuleiro
             Colunas = colunas;
             Pecas = new Peca[linhas, colunas];
         }
-        public Peca peca(int linha, int coluna)
+        public Peca Peca(int linha, int coluna)
         {
             //Retorna o que há nessa posição da Matriz ( peça ou vazio)
             return Pecas[linha, coluna];
