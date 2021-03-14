@@ -34,6 +34,10 @@ namespace Exercicio_146.Entities
             {
                 throw new DomainException("Saque deve ser menor que o limite de saques!");
             }
+            if (amount > Balance)
+            {
+                throw new DomainException("Não há saldo suficiente!");
+            }
 
             Balance -= amount;
         }
