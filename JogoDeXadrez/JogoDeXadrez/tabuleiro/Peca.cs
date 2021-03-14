@@ -18,5 +18,6 @@ namespace tabuleiro
             Tab = tab;
             QntMovimentos = 0;
         }
+        
     }
 }
