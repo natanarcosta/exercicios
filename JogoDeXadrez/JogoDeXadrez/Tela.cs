@@ -15,10 +15,18 @@ namespace JogoDeXadrez
             ImprimirPecasCapturadas(partida);
             Console.WriteLine();
             Console.WriteLine("Turno: " + partida.Turno);
-            Console.WriteLine("Aguardando jogada: " + partida.JogadorAtual);
-            if (partida.Xeque)
+            if (!partida.Terminada)
             {
-                Console.WriteLine("XEQUE!");
+                Console.WriteLine("Aguardando jogada: " + partida.JogadorAtual);
+                if (partida.Xeque)
+                {
+                    Console.WriteLine("XEQUE!");
+                }
+            }
+            else
+            {
+                Console.WriteLine("XEQUE MATE!");
+                Console.WriteLine("Vencedor: " + partida.JogadorAtual);
             }
         }
         public static void ImprimirPecasCapturadas(PartidaDeXadrez partida)
@@ -36,7 +44,7 @@ namespace JogoDeXadrez
         public static void ImprimirConjunto(HashSet<Peca> conjunto)
         {
             Console.Write("[");
-            foreach(Peca x in conjunto)
+            foreach (Peca x in conjunto)
             {
                 Console.Write(x + " ");
             }
@@ -44,11 +52,11 @@ namespace JogoDeXadrez
         }
         public static void ImprimirTabuleiro(Tabuleiro tab)
         {
-            for (int i = 0; i<tab.Linhas; i++)
+            for (int i = 0; i < tab.Linhas; i++)
             {
                 Console.Write(8 - i + " ");
 
-                for (int j = 0; j< tab.Colunas; j++)
+                for (int j = 0; j < tab.Colunas; j++)
                 {
                     ImprimirPeca(tab.Peca(i, j));
                 }
@@ -108,8 +116,8 @@ namespace JogoDeXadrez
         public static PosicaoXadrez LerPosicaoXadrez()
         {
             string s = Console.ReadLine();
-            
-            int linha = int.Parse(s[1]+"");
+
+            int linha = int.Parse(s[1] + "");
             char coluna = s[0];
             return new PosicaoXadrez(coluna, linha);
         }

@@ -43,6 +43,8 @@ namespace JogoDeXadrez
                         Console.ReadLine();
                     }
                 }
+                Console.Clear();
+                Tela.ImprimirPartida(Partida);
              
             }
             catch(TabuleiroException e)
