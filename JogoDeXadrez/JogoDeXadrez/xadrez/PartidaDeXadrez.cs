@@ -229,7 +229,9 @@ namespace xadrez
 
             ColocarNovaPeca('e', 7, new Torre(Tab, Cor.Preta));
             ColocarNovaPeca('c', 7, new Torre(Tab, Cor.Preta));
-            ColocarNovaPeca('d', 7, new Torre(Tab, Cor.Preta)); ;
+            ColocarNovaPeca('d', 7, new Bispo(Tab, Cor.Preta));
+
+
         }
     }
 }
